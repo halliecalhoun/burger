@@ -1,63 +1,105 @@
-<h2>WELCOME TO</h2>
-<h1>Eat-da-burger!</h1>
+<div class="container">
 
-<h3>Add your favorite types of burgers below to eat!</h3>
+  <div class="jumbotron">
+    <h2>WELCOME TO</h2>
+    <h1>Eat-da-burger!</h1>
 
 
-<h2>Burgers</h2>
+    <h2>Add a Burger</h2>
+    <h3>Add your favorite types of burgers below to eat!</h3>
+    <form class="create-form">
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+      <div class="form-group">
+        <label for="newBurger">Burger Name:</label>
+        <input type="text" id="newBurger" name="burger">
+      </div>
 
-  <div class="form-group">
-    <label for="newBurger">Burger Name:</label>
-    <input type="text" id="newBurger" name="burger">
-  </div>
-
-  {{!-- <div class="form-group">
+      {{!-- <div class="form-group">
     <label for="sleepy">Sleepy?</label><br>
     <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+    <input type="radio" name="sleepy" value="0"> Awake3
   </div> --}}
 
-  <button type="submit" class="btn btn-success" id="addBurger">Add Burger</button>
-</form>
+      <button type="submit" class="btn btn-success" id="addBurger">Add Burger</button>
+    </form>
+  </div>
 
-
-<h2>undevoured burgers!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-{{!-- undevoured burgers --}}
-<div class="row">
-  <div class="col-sm-6">
-    <ul>
-      {{#each burgers}}
+<div class="row ">
+    <div class="col-sm-6">
+  <div class="card" id="card1">
+    <div class="card-header">
+      Undevoured Burgers
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Burgers to eat:</h5>
+      <p class="card-text">Click devour to eat the burger of your choice.</p>
+        <ul>
+        {{#each burgers}}
         {{#unless devoured}}
-          <span> {{this.id}} : {{this.burger_name}} </span>
-          {{> burgers/burger-block devoured=false}}
-        {{/unless}} 
-      {{/each}}
-    </ul>
+        <span> {{this.id}} : {{this.burger_name}} </span>
+        {{> burgers/burger-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+      {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+    </div>
+  </div>
+  </div>
+  
+
+    <div class="col-sm-6">
+  <div class="card" id="card2">
+    <div class="card-header">
+      Undevoured Burgers
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Burgers to eat:</h5>
+      <p class="card-text">Click devour to eat the burger of your choice.</p>
+        <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <span> {{this.id}} : {{this.burger_name}} </span>
+        {{> burgers/burger-block devoured=true}}
+        {{/if}}
+        {{/each}}
+      </ul>
+      {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+    </div>
+  </div>
+  </div>
   </div>
 </div>
+  {{!-- <div class="clear-fix"> --}}
 
-<h2>Devoured Burgers!</h2>
-<div class="row">
-  <div class="col-sm-6">
-    <ul>
-      {{#each burgers}}
+  {{!-- undevoured burgers --}}
+  <h2>Undevoured burgers!</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <span> {{this.id}} : {{this.burger_name}} </span>
+        {{> burgers/burger-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+ 
+
+  <h2>Devoured Burgers!</h2>
+  {{!-- <div class="row"> --}}
+    <div class="col-sm-6">
+      <ul>
+        {{#each burgers}}
         {{#if devoured}}
-          <span> {{this.id}} : {{this.burger_name}} </span>
-          {{> burgers/burger-block devoured=true}}
-        {{/if}} 
-      {{/each}}
-    </ul>
+        <span> {{this.id}} : {{this.burger_name}} </span>
+        {{> burgers/burger-block devoured=true}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
+  </div>
+
+</div>
 </div>

@@ -1,0 +1,19 @@
+/* body {
+    margin: 0 auto;
+}
+
+#card1 {
+    float: left;
+    position: relative;
+}
+
+#card2 {
+    float: left;
+    position: relative;
+}
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  } */
