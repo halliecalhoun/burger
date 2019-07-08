@@ -1,10 +1,8 @@
 <div class="container">
 
   <div class="jumbotron">
-    <h2>WELCOME TO</h2>
-    <h1>Eat-da-burger!</h1>
-
-
+    <h1>Welcome to Eat-da-burger!</h1>
+    <hr>
     <h2>Add a Burger</h2>
     <h3>Add your favorite types of burgers below to eat!</h3>
     <form class="create-form">
@@ -20,7 +18,7 @@
     <input type="radio" name="sleepy" value="0"> Awake3
   </div> --}}
 
-      <button type="submit" class="btn btn-success" id="addBurger">Add Burger</button>
+      <button type="submit" class="btn btn-primary" id="addBurger"><span class="fa fa-cutlery"></span> Add Burger</button>
     </form>
   </div>
 
@@ -54,8 +52,8 @@
       Devoured Burgers
     </div>
     <div class="card-body">
-      <h5 class="card-title">Burgers to eat:</h5>
-      <p class="card-text">Click devour to eat the burger of your choice.</p>
+      <h5 class="card-title">Burgers devoured:</h5>
+      <p class="card-text">Click delete to throw away the burger of your choice.</p>
         <ul>
         {{#each burgers}}
         {{#if devoured}}
