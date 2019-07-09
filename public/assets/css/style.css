@@ -1,5 +1,37 @@
 body {
     margin: 0 auto;
+    background-image: url("/assets/img/burg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+h1 {
+    color: white;
+}
+
+.lead {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+#bg-img {
+    height: 400px;
+    width: auto;
+    padding: 15px;
+    /* background-image: url("assets/img/burg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto; */
+}
+
+#fluid-text {
+    margin-top: 75px;
 }
 /* 
 #card1 {
