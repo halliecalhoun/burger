@@ -1,8 +1,9 @@
 body {
     margin: 0 auto;
     background-image: url("/assets/img/burg.jpg");
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
+    position: scroll;
     background-repeat: no-repeat;
     margin: 0 auto;
 }
@@ -19,6 +20,10 @@ label {
     color: white;
 }
 
+#main {
+    margin-bottom: 50px;
+}
+
 #bg-img {
     height: 400px;
     width: auto;
@@ -31,7 +36,7 @@ label {
 }
 
 #fluid-text {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 /* 
 #card1 {

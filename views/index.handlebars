@@ -21,7 +21,7 @@
         <input type="text" class="form-control ml-2" id="newBurger" name="burger">
       </div>
  <div class="form-group mx-sm-3 mb-2">
-      <button type="submit" class="btn btn-primary m" id="addBurger"><span class="fa fa-cutlery"></span> Add Burger</button>
+      <button type="submit" class="btn btn-primary" id="addBurger"><span class="fa fa-cutlery"></span> Add Burger</button>
     </form>
   </div>
 </div>
@@ -30,22 +30,24 @@
 </div>
 </div>
 
-<div class="container">
+
+<div class="container" id="main">
 {{!-- undevoured burgers --}}
 <div class="row ">
-    <div class="col-sm-6 p-3">
+    <div class="col-sm-6">
   <div class="card" id="card1">
     <div class="card-header">
-      Undevoured Burgers
+      <h4>Undevoured Burgers</h4>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Burgers to eat:</h5>
-      <p class="card-text">Click devour to eat the burger of your choice.</p>
+      <p class="card-text">Click the devour button to eat the burger of your choice.</p>
         <ul>
         {{#each burgers}}
         {{#unless devoured}}
+        
         <span> {{this.id}} : {{this.burger_name}} </span>
         {{> burgers/burger-block devoured=false}}
+        <hr>
         {{/unless}}
         {{/each}}
       </ul>
@@ -53,21 +55,24 @@
     </div>
   </div>
   </div>
+
+  {{!-- <div class="col-sm-2 pr-3">
+  </div> --}}
   
 {{!-- devoured burgers --}}
-    <div class="col-sm-6 p-3">
+    <div class="col-sm-6">
   <div class="card" id="card2">
     <div class="card-header">
-      Devoured Burgers
+      <h4>Devoured Burgers</h4>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Burgers devoured:</h5>
-      <p class="card-text">Click delete to throw away the burger of your choice.</p>
+      <p class="card-text">Click the delete burger button to throw away your burger.</p>
         <ul>
         {{#each burgers}}
         {{#if devoured}}
         <span> {{this.id}} : {{this.burger_name}} </span>
         {{> burgers/burger-block devoured=true}}
+        <hr>
         {{/if}}
         {{/each}}
       </ul>
