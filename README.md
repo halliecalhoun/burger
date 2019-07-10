@@ -1,6 +1,6 @@
 # Eat-Da-Burger
 
-![Site Screenshot](/assets/img/ss.PNG)
+![Site Screenshot](assets/img/ss.PNG)
 
 
 # Description
